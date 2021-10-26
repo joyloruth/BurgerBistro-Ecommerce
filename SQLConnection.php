@@ -13,11 +13,17 @@ onnection
  */
 class SQLConnection {
     
-    
+   
     
      public static function getConn(){
+     try{
+         return new mysqli("localhost","joylorut_joy","joylorut_joy","joylorut_eodb");
+     }
+     
+     catch(Exception $e){
+         echo "connection interupted" + $e->getMessage();
+     }
         
-        return new mysqli("localhost","joylorut_joy","joylorut_joy","joylorut_eodb");
     }
     
     

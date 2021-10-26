@@ -112,6 +112,7 @@
   }
   .panel-footer {
     background-color: white !important;
+    font-family: poppins;
   }
   .panel-footer h3 {
     font-size: 32px;
@@ -432,8 +433,8 @@
   
   #order-summary{
       width: 100%;
-      height: 1200px;
-      background-color: purple;
+      height: 100vh;
+      background-color: whitesmoke;
       display:flex;
       align-items: center;
       justify-content: center;
@@ -441,7 +442,7 @@
   }
   
   .order-summary-heading{
-      background-color: greenyellow;
+      background-color: white;
       width: 600px;
       height: 200px;
       border: solid lightgray 1px;
@@ -461,21 +462,20 @@
   }
   
   #order-summary-sheet{
-      background-color: red;
+      background-color: white;
       width: 700px;
-      height:auto;
+      height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       padding:10px;
-      border-radius: 5px;
-      border: solid 1.5px lightgrey;
+      border: solid 1.5px lightgray;
+      box-shadow: 0px 3px 5px lightgrey;
   }
   
   .order-summary-block{
       margin:5px;
-      background-color: navy;
       width: 600px;
       height: 250px;
       border: solid lightgrey 1px;
@@ -490,7 +490,7 @@
   }
   
   .order-summary-photo{
-      background-color: palevioletred;
+      
       width:250px;
       height:200px;
       display:flex;
@@ -505,7 +505,7 @@
   }
   
   .order-summary-info{
-      background-color: blue;
+      
       width:350px;
       height:200px;
       text-align: left;
@@ -519,7 +519,7 @@
   #paypal{
       width: 300px;
       height: 400px;
-      background-color: whitesmoke;
+      background-color: white;
       border: lightgrey double 1px;
       margin: 5px;
       display:flex;
@@ -528,6 +528,7 @@
       flex-direction: column;
       color: black;
       font-size: 30px;
+      box-shadow: 0px 3px 5px lightgray;
   }
   
   #paypalbutton{
@@ -633,6 +634,7 @@
         
         
         
+        
         <?php 
             if(!isset($_SESSION["user"]))
             {
@@ -642,6 +644,7 @@
                 echo '<li><a href="logoff.php">LOG OFF</a></li>';
             }
         ?>
+        <li><a class =' navbar-right' href="add_order.php"><img src="ecommerce_images/cart.png"/></a></li>
       </ul>
     </div>
       <?php ?>
@@ -655,6 +658,7 @@
  
         ?>
   </div>
+    
 </nav>
 
     <div id ="space">

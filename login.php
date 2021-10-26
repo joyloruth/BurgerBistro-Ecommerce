@@ -1,5 +1,7 @@
 <?php include "header.php" ?>
-<?php include "SQLConnection.php" ?>
+<?php include "UserDAOImpl.php" ?>
+
+
     <center>
         <h2>Login</h2>
         <form action = "login.php" method = "post">
@@ -15,21 +17,11 @@
     <?php 
         if(isset($_POST["sub"]))
         {
-            $con = SQLConnection::getConn();
-            $st_check=$con->prepare("select * from users where email = ? and password = ?");
-            $st_check->bind_param("ss", $_POST[email], $_POST[password]);
-            $st_check->execute();
-            $rs=$st_check->get_result();
+             $user = new UserDAOImpl();
+             $user->login();
+            
 
-            if($rs->num_rows === 0)
-            {
-                echo "<script>alert('Account not found.');</script>";
-            }
-            else
-            {
-                $_SESSION["user"]=$_POST["email"];
-                echo "<script>window.location = 'menu.php';</script>";
-            }
+            
         }
     ?>
     
