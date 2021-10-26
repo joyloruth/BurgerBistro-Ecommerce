@@ -1,0 +1,1458 @@
+/*GOOGLE FONTS */
+  /*Corben*/
+  @import url('https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap');
+  /*Poppins*/
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  /*Dancing Script*/
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+  /*Concert One*/
+  @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Dancing+Script:wght@700&display=swap');
+  /*Special Elite*/
+  @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+ 
+  
+  #preloader{
+    width:100%;
+    height:100vh;
+    background-color: yellowgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-size: cover;
+    animation:   fadeOutBackground 1s ease , make_invisible 1s ease-out;
+    animation-delay: 11s, 12s;
+    animation-fill-mode: forwards, forwards;
+    overflow: hidden;
+    top: 0;
+    z-index: 10000;
+    flex-direction: column;
+    color:orangered;
+  }
+  
+  #preloader-images{
+    margin-bottom: 20px;
+  }
+  #preloader-title h1{
+    animation: font-small 1s ease-out;
+    animation-delay: 8s;
+    animation-fill-mode: forwards;
+    font-family: special elite;
+    font-size: 40px;
+    font-weight: 800;
+    text-shadow: 3px 3px 3px#80c009;
+  }
+
+  
+  
+  #preloader-burger{
+    animation: moveUp 1s ease-in-out alternate infinite, grow 3s ease-in-out alternate-reverse infinite, make_invisible 1s ease-out;
+    animation-delay: 0s, 0s, 8s;
+    animation-fill-mode: forwards;
+    transition: all 1s ease-in-out;
+  }
+  #preloader-milkshake{
+    animation: moveUp 1s ease-in-out alternate infinite, grow 3s ease-in-out alternate-reverse infinite, make_invisible 1s ease-out ;
+    animation-delay: .5s, 0s, 9s;
+    animation-fill-mode: forwards;
+    transition: all 1s ease-in-out;
+  }
+  #preloader-fries{
+    animation: opacity 1s ease, moveUp 1s ease-in-out alternate infinite, grow 1s ease-in-out alternate-reverse infinite, make_invisible 1s ease-out ;
+    animation-delay: 0s,1s,0s, 10s;
+    animation-fill-mode: forwards;
+    transition: all 1s ease-in-out;
+  }
+  
+  @keyframes opacity
+  {
+    from { opacity: 0%;}
+      to { opacity: 100%;}
+  }
+  
+  @keyframes end
+  {
+    from { visibility: hidden;}
+      to { visibility: visible;}
+  }
+  
+  @keyframes moveUp{
+      0%{ transform: translateY(50px);}
+    100%{ transform: translateY(-50x);}
+  }
+  
+  @keyframes grow{
+    from  { height: 0px;
+           width: 0px;}
+      to { height: 65px;
+            width: 65px;}
+  }
+
+  @keyframes font-small{
+    from  { font-size: 20px;}
+      to  { font-size: 0px;}
+  }
+  
+  
+  @keyframes make_invisible
+  {
+    from { height: auto;
+            width: auto; }
+      to { height:   0%;
+            width:   0%; }
+  }
+
+  @keyframes make_visible
+  {
+    from { height: auto;
+            width: auto; }
+      to { height:   0%;
+            width:   0%; }
+  }
+  
+
+
+  
+  @keyframes fadeOutBackground{
+    100%
+    {
+      background-color: rgba(153, 205, 50, 0);
+    }
+    0%
+    {
+      background-color: yellowgreen;
+    }
+  }
+  
+  
+  @keyframes displayNone
+  {
+    from { display: flex;
+             }
+      to { display: none;
+             }
+  }
+
+
+
+
+
+ *{
+   scroll-behavior: smooth;
+ }
+
+.menu{
+  color: orangered;
+  padding: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-family: special elite;
+  transition: all 1s;
+  font-weight: 800;
+  text-transform: capitalize;
+
+}
+
+.menu:hover{
+  color:white;
+  transition: all .5s ease-in-out; 
+  text-decoration: none;
+}
+
+.banner{
+  height: 100vh;
+  /*background-image: linear-gradient(#292828a8, #160606a2), url("/images/backgrounds/burgerBanner.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: .20fr .50fr .5fr .20fr;
+  grid-template-rows: .1fr .5fr .1fr;
+  grid-template-areas: 
+  "left-sidebar navbar navbar right-sidebar"
+  "left-sidebar banner-info banner-image right-sidebar"
+  "bottom-bar bottom-bar bottom-bar bottom-bar";
+  background-attachment: fixed;
+}
+
+.banner-info{
+  grid-area: banner-info;
+  align-items: center;
+  text-align: justify;
+  padding:5px;
+  padding-top: 100px;
+  padding-right: 25px;
+}
+
+.banner-image{
+  grid-area: banner-image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  
+}
+
+ #burger{
+   width:400px;
+ }
+
+.banner h1{
+    font-family: POPPINS;
+    vertical-align: middle;
+    font-size: 60px;
+    color:white;
+    font-weight:800;
+}
+.banner h2{
+  font-family: Special Elite;
+  color:orangered;
+  font-size: 36px;
+}
+
+.banner p{
+  font-family: 'Poppins';
+  color: white;
+  font-size: 18px;
+  word-spacing: -2px;
+}
+
+.banner button{
+  color:orangered;
+  text-transform: uppercase;
+  padding:10px;
+  border-color: orangered;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: poppins;
+  
+}
+
+.banner button:hover{
+  background-color: orangered;
+  color:white;
+  transition: all .5s ease-in-out;
+}
+
+
+.left-sidebar{
+  grid-area: left-sidebar;
+}
+
+.right-sidebar{
+  grid-area: right-sidebar;
+}
+
+/*Burger Special*/
+
+#burger-special{
+  display: inline-flex;
+  padding:50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-special-image{
+  
+  width: 50%;
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-special-info{
+  
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.603);
+  box-shadow: -7px 0px 40px white;
+}
+
+#burger-special h1{
+  font-size: 40px;
+  font-family: "Special Elite";
+}
+
+.burger-special-info p{
+  font-family: poppins;
+  color: rgb(51, 50, 50);
+}
+
+.burger-special-info p span{
+  
+  font-family: poppins;
+  color:white;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-color:  orangered;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  text-align: justify;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgb(141, 141, 141);
+}
+
+.burger-special-info button{
+  color:orangered;
+  text-transform: uppercase;
+  padding:10px;
+  border-color: orangered;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: poppins;
+}
+
+.burger-special-info button:hover{
+  background-color: orangered;
+  color:white;
+  transition: all .5s ease-in-out;
+}
+
+#new-menu-items{
+  background-color: rgb(255, 255, 255);
+  display: inline-flex;
+  padding: 5px;
+}
+
+#new-menu-items button{
+  color:rgb(243, 239, 237);
+  text-transform: uppercase;
+  padding:10px;
+  border-color:  rgb(253, 252, 251);
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: poppins;
+}
+#new-menu-items button:hover{
+  background-color: rgba(255, 68, 0, 0.445);
+}
+
+.new-menu-items-leftSide{
+  
+  padding:25px;
+  margin-right: 5px;
+  font-family: poppins;
+  width:50%;
+  color:rgb(168, 165, 165);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 3px 15px black;
+}
+
+.new-menu-items-leftSide:hover{
+   transition: all 2s;
+   width: 70%;
+}
+
+.new-menu-items-leftSide h1{
+  color:rgb(255, 255, 255);
+  font-family: special elite;
+  font-weight: 800;
+}
+
+.new-menu-items-leftSide p span{
+  
+  font-family: poppins;
+  color:white;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-color:  orangered;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  text-align: justify;
+  border-radius: 3px;
+}
+
+.new-menu-items-leftSide h3{
+  color:rgb(255, 255, 255);
+  font-family: special elite;
+  font-weight: 800;
+}
+
+.new-menu-items-leftSide p{
+    font-size: 25px;
+}
+
+
+#about{
+  background-color: yellowgreen;
+  height: 100vh;
+  display: grid;
+  grid-template-columns:  .25fr 1fr 1fr .25fr ;
+  grid-template-rows: 1fr;
+  grid-template-areas: "left-sidebar slider about-info right-sidebar ";
+  padding:20px;
+  grid-gap: 10px;
+}
+
+#about-info{
+  grid-area: about-info;
+  padding: 10px;
+  border-radius: 5px;
+  padding-left: 20px;
+  height:300px;
+  text-indent: 10px;
+  font-family: poppins;
+}
+
+#about h1{
+  text-align: center;
+  font-size: 30px;
+  font-family: Dancing Script;
+}
+
+#about h2{
+  font-family: poppins;
+}
+
+#about p{
+  font-family: poppins;
+}
+
+#burger-menu{
+  
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-areas: "burger-left-side burger-middle-side burger-right-side";
+}
+
+.burger-left-side{
+  grid-area: burger-left-side;
+  display: grid;
+  grid-template-rows: 1fr .25fr .5fr;
+  grid-template-columns:  1fr;
+  grid-template-areas: "burger-pic"
+                       "burger-heading"
+                       "burger-info";
+}
+
+.burger-right-side{
+  grid-area: burger-right-side;
+  display: grid;
+  grid-template-rows: 1fr .25fr .5fr;
+  grid-template-columns:  1fr;
+  grid-template-areas: "burger-pic"
+                       "burger-heading"
+                       "burger-info";
+
+  
+
+}
+
+.burger-middle-side{
+  grid-area: burger-middle-side;
+  display: grid;
+  grid-template-rows: 1fr .25fr .5fr;
+  grid-template-columns:  1fr;
+  grid-template-areas: "burger-pic"
+                       "burger-heading"
+                       "burger-info";
+  
+}
+
+.burger-info{
+  grid-area: burger-info;
+  text-align: center;
+  color: black;
+  padding: 10px;
+  font-family: poppins;
+}
+
+.burger-info p{
+  font-family: poppins;
+  
+}
+
+.burger-heading{
+  grid-area: burger-heading;
+  font-family: Special Elite;
+  color:orangered;
+  font-size: 36px; 
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.burger-pic{
+  grid-area: burger-pic;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* food list */
+#food-list {
+  font-family: poppins;
+  text-align: center;
+  padding-top: 20px;
+  color:rgb(48, 48, 48);
+  padding-bottom: 10px;
+  
+}
+
+#food-list p span{
+  font-family: poppins;
+  color:white;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-color:  orangered;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  text-align: justify;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgb(141, 141, 141);
+}
+
+#food-list h1{
+  font-family: special elite;
+  text-align: center;
+  font-weight: 800;
+  font-size: 45px;
+}
+
+#food-list p{
+  font-family: poppins;
+  text-align: center;
+  height: 50px;
+}
+
+#food-list-items{
+  display:  inline-flex;
+  padding-bottom: 60px;
+ 
+}
+
+#food-list-items h3{
+  font-family: special elite;
+  height: 40px;
+  color:black;
+  font-weight: 800;
+}
+
+.food-list-item{
+  margin: 10px;
+}
+
+.food-list-item button{
+  color:orangered;
+  text-transform: uppercase;
+  padding:10px;
+  border-color: orangered;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: poppins;
+}
+
+.food-list-item button:hover{
+  background-color: orangered;
+  color:white;
+  transition: all .5s ease-in-out;
+}
+
+.food-list-item img{
+  margin: 10px;
+  height: 200px;
+}
+
+#side-items{
+  background-color: orangered;
+  display: inline-flex ;
+  text-align: center;
+  width:100%;
+  justify-content: center;
+  padding:5px;
+}
+
+.side-item{
+  margin: 50px; 
+}
+
+.side-item h3{
+  padding: 5px;
+  font-family: special elite;
+}
+
+#side-item-img {
+  width: 80px;
+  animation: bounce 2s linear alternate infinite ;
+}
+
+#side-items-section{
+  background-color: orangered;
+  padding: 10px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+#side-items-section p{
+  background-color: orangered;
+  padding: 10px;
+  padding-top: 30px;
+  text-align: center;
+  font-family: poppins;
+}
+
+#side-items-section h1{
+  background-color: orangered;
+  padding: 10px;
+  padding-top: 30px;
+  text-align: center;
+  color:white;
+  font-family: special elite;
+  font-weight: 800;
+}
+
+#side-items-section p span{
+  font-family: poppins;
+  color:black;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-color:  white;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  text-align: justify;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgb(175, 55, 12);
+}
+
+#map {
+  height: 400px;
+  width:400px;
+  box-shadow: 0px 3px 3px grey;
+  
+  
+}
+
+
+
+#contact-info {
+  
+  color:white;
+  font-family: special elite;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding:10px;
+  box-shadow: 3px 3px 3px rgb(141, 141, 141);
+ 
+}
+
+#contact-info p {
+  text-align: justify;
+  font-family: poppins;
+  
+}
+
+#contact-info p span{
+  font-family: poppins;
+  color:white;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-color:  orangered;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  text-align: justify;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgb(0, 0, 0);
+}
+
+
+#contact{
+ 
+  
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+footer{
+  background-color: rgb(0, 0, 0);
+  text-align: left;
+  color:white;
+  font-family: poppins;
+  padding:5px;
+  padding-left: 30px;
+  height:50px;
+  line-height: 50px;
+
+}
+
+
+ .navbar {
+    margin-bottom: 0;
+    background-color:  black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px ;
+    
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: poppins;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+ 
+ 
+  }
+  
+  .nav.navbar-nav.navbar-right li a {
+    color: white;
+    margin: 5px;
+    font-size: 18px;
+    
+}
+
+ .nav.navbar-nav.navbar-right li a:hover{
+    opacity: 80%;
+    margin: 5px;
+    text-decoration: none;
+    
+}
+
+
+.navbar-brand{
+    color: yellowgreen;
+    font-family: special elite;
+    font-size: 25px;
+}
+.navbar-brand:hover{
+    color: orangered;
+    font-family: special elite;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slider{
+  height: 400px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: .05fr 80fr .05fr;
+  grid-template-rows: .5fr;
+  grid-template-areas: "leftButton images rightButton";
+  grid-area: slider;
+  border-radius: 2px;
+}
+
+#side-item-img:hover{
+  -webkit-animation: spin 1s ease-in-out;
+     -moz-animation: spin 1s ease-in-out;
+       -o-animation: spin 1s ease-in-out;
+          animation: spin 1s ease-in-out;
+          transition: all 1s ease-in-out;
+}
+
+#burger-menu-pic{
+  width: 100px;
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 950px) 
+{
+  .banner{
+    height: auto;
+    background-image: linear-gradient(#444243a8, #91211dc2), url("/images/backgrounds/burgerBanner.jpg");
+    display: grid;
+    padding: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0fr .5fr 0fr ;
+    grid-template-areas: 
+    "left-sidebar" "navbar" "right-sidebar"
+    "banner-info" "banner-image";
+  }
+
+  #burger-menu{
+    padding-top: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "burger-menu-title burger-menu-title burger-menu-title"
+                         "burger-left-side burger-middle-side burger-right-side"
+    
+  }
+
+  .burger-menu-title{
+    grid-area: burger-menu-title;
+   
+ 
+  }
+
+  #burger-menu-pic{
+    width: 100px;
+    height: 100px;  
+  }
+
+  .burger-heading{
+    grid-area: burger-heading;
+    font-family: special elite;
+    color:black;
+    font-size: 20px; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    height: 55px;
+  }
+
+  
+
+  #about{
+    background-color: yellowgreen;
+    height: auto;
+    display: grid;
+    grid-template-columns:  1fr ;
+    grid-template-rows: .0fr 1fr 1fr .0fr;
+    grid-template-areas: "left-sidebar" 
+                         "slider"
+                         "about-info"
+                         "right-sidebar" ;
+    padding:20px;
+  }
+
+  #burger-special{
+    display: inline-flex;
+    padding:50px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .food-list-item{
+    margin: 15px;
+  }
+
+  #side-items{
+    background-color: orangered;
+    display: inline-flex ;
+  }
+
+  .side-items{
+    margin: 0px;
+  }
+  .side-item{
+    margin: 0px;
+  }
+  #side-item-img{
+    width: 90px;
+  }
+
+  #side-item-img:hover{
+    -webkit-animation: spin 1s linear;
+       -moz-animation: spin 1s linear;
+         -o-animation: spin 1s linear;
+            animation: spin 1s linear;
+  } 
+
+  #side-items h3{
+    font-size: 20px;
+    font-weight: 800;
+  }
+}
+
+
+
+@keyframes display{
+  from{display: none;}
+    to{display: flex;}
+}
+
+@keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+  
+}
+
+
+
+/*responsive layout for iPhone 6/7/8 */
+@media screen and (max-width: 375px) 
+{
+  body{
+    width:375px;
+    margin:0px;
+    background-color: aquamarine;
+  }
+  .banner{
+    height: auto;
+    background-image: linear-gradient(#444243a8, #91211dc2), url("/images/backgrounds/burgerBanner.jpg");
+    display: grid;
+    padding: 5px;
+    grid-template-columns: 375px;
+    grid-template-rows: 0fr .5fr 0fr ;
+    grid-template-areas: 
+    "left-sidebar" "navbar" "right-sidebar"
+    "banner-info" "banner-image";
+    width:auto;
+    justify-content: center;
+  }
+
+  .banner-info p{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #burger-menu{
+    padding-top: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "burger-menu-title burger-menu-title burger-menu-title"
+                         "burger-left-side burger-middle-side burger-right-side"
+    
+  }
+
+
+  #burger-menu-pic{
+    width: 100px;
+    height: 100px;  
+  }
+
+  .burger-heading{
+    grid-area: burger-heading;
+    font-family: special elite;
+    color:black;
+    font-size: 20px; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    height: 55px;
+  }
+
+  
+
+  #about{
+    background-color: yellowgreen;
+    height: auto;
+    display: grid;
+    grid-template-columns:  1fr ;
+    grid-template-rows: .0fr 1fr 1fr .0fr;
+    grid-template-areas: "left-sidebar" 
+                         "slider"
+                         "about-info"
+                         "right-sidebar" ;
+    padding:20px;
+  }
+
+  #burger-special{
+    display: inline-flex;
+    padding:5px;justify-content: center;
+    align-items: center;
+    width: 375px;
+  }
+
+  .burger-special-info{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.603);
+    box-shadow: -3px 0px 10px white;
+  }
+
+  #new-menu-items{
+    width:375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .new-menu-items-leftSide{
+    width:100%;
+    margin:5px;
+  }
+
+  #food-list{
+    background-color: yellowgreen;
+    width:375px;
+    display: flex;
+    flex-direction: column;
+  }
+  .food-list-item{
+    margin: 15px;
+  }
+  
+  .food-list-item button{
+    background-color: aliceblue;
+  }
+
+  #food-list-items{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #side-items-section{
+    width:375px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  #side-items-section p{
+    text-align: center;
+  }
+
+  #side-items{  
+    display: flex;
+    flex-wrap: wrap;
+    width:375px;
+  }
+  .side-items{
+    margin: 5px;
+  }
+  .side-item{
+    margin: 0px;
+    padding: 5px;  
+  }
+  #side-item-img{
+    width: 80px;
+  }
+
+  #side-item-img:hover{
+    -webkit-animation: spin 1s linear;
+       -moz-animation: spin 1s linear;
+         -o-animation: spin 1s linear;
+            animation: spin 1s linear;
+  } 
+
+  #side-items h3{
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  #contact{
+    width:375px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #map{
+    width:375px;
+    height: 200px;
+  }
+
+  #contact-info{
+    width:375px;
+    height:200px;
+  }
+}
+
+
+/*responsive layout for iPhone 6/7/8 */
+@media screen and (max-width: 414px) 
+{
+  body{
+    width: 414px;
+    margin: 0px;
+  }
+  .banner{
+    height: auto;
+    background-image: linear-gradient(#444243a8, #91211dc2), url("/images/backgrounds/burgerBanner.jpg");
+    display: grid;
+    padding: 5px;
+    grid-template-columns: 414px;
+    grid-template-rows: 0fr .5fr 0fr ;
+    grid-template-areas: 
+    "left-sidebar" "navbar" "right-sidebar"
+    "banner-info" "banner-image";
+    width:auto;
+    justify-content: center;
+  }
+
+  .banner-info p{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #burger-menu{
+    padding-top: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "burger-menu-title burger-menu-title burger-menu-title"
+                         "burger-left-side burger-middle-side burger-right-side"
+    
+  }
+  #burger-menu-pic{
+    width: 100px;
+    height: 100px;  
+  }
+
+  .burger-heading{
+    grid-area: burger-heading;
+    font-family: special elite;
+    color:black;
+    font-size: 20px; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    height: 55px;
+  }
+
+  
+
+  #about{
+    background-color: yellowgreen;
+    height: auto;
+    display: grid;
+    grid-template-columns:  1fr ;
+    grid-template-rows: .0fr 1fr 1fr .0fr;
+    grid-template-areas: "left-sidebar" 
+                         "slider"
+                         "about-info"
+                         "right-sidebar" ;
+    padding:20px;
+  }
+
+  #burger-special{
+    display: inline-flex;
+    padding:5px;justify-content: center;
+    align-items: center;
+    width: 414px;
+  }
+
+  .burger-special-info{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.603);
+    box-shadow: -3px 0px 10px white;
+  }
+
+  #new-menu-items{
+    width: 414px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .new-menu-items-leftSide{
+    width:100%;
+    margin:5px;
+  }
+
+  #food-list{
+    background-color: yellowgreen;
+    width: 414px;
+    display: flex;
+    flex-direction: column;
+  }
+  .food-list-item{
+    margin: 15px;
+  }
+  
+  .food-list-item button{
+    background-color: aliceblue;
+  }
+
+  #food-list-items{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #side-items-section{
+    width: 414px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  #side-items-section p{
+    text-align: center;
+  }
+
+  #side-items{  
+    display: flex;
+    flex-wrap: wrap;
+    width: 414px;
+  }
+  .side-items{
+    margin: 5px;
+  }
+  .side-item{
+    margin: 0px;
+    padding: 5px;  
+  }
+  #side-item-img{
+    width: 80px;
+  }
+
+  #side-item-img:hover{
+    -webkit-animation: spin 1s linear;
+       -moz-animation: spin 1s linear;
+         -o-animation: spin 1s linear;
+            animation: spin 1s linear;
+  } 
+
+  #side-items h3{
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  #contact{
+    width: 414px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #map{
+    width: 414px;
+    height: 200px;
+  }
+
+  #contact-info{
+    width: 414px;
+    height:200px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Key Frames */
+/*opens intro doors
+@keyframes openDoor
+{
+  from
+  {
+    left:0;
+  }
+
+  to
+  {
+    left: 82%;
+  }
+}
+
+@keyframes vanish{
+  100%
+  {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/*spin
+@-webkit-keyframes spin
+{
+  100%
+  {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin
+{
+  100%
+  {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+  
+}
+*/
+@keyframes bounce{
+  100%{transform: translateY(0px);}
+    0%{transform: translateY(-20px);}
+}
+
+@keyframes bounceforward{
+  100%{transform: translateX(-200px);}
+    0%{transform: translateX(200px);}
+}
+
+
+
+
+
+
+
