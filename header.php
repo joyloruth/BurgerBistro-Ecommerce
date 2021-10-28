@@ -433,7 +433,9 @@
   
   #order-summary{
       width: 100%;
-      height: 100vh;
+      padding-top: 100px;
+      padding-bottom: 20px;
+      height: auto;
       background-color: whitesmoke;
       display:flex;
       align-items: center;
@@ -443,7 +445,7 @@
   
   .order-summary-heading{
       background-color: white;
-      width: 600px;
+      width: 100%;
       height: 200px;
       border: solid lightgray 1px;
       padding:15px;
@@ -457,14 +459,13 @@
       text-align: justify;
       font-weight: 400;
       font-size: 15px;
-      color: darkslategrey;
-      
+      color: darkslategrey; 
   }
   
   #order-summary-sheet{
       background-color: white;
       width: 700px;
-      height: 400px;
+      height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -472,12 +473,13 @@
       padding:10px;
       border: solid 1.5px lightgray;
       box-shadow: 0px 3px 5px lightgrey;
+      overflow: scroll;
   }
   
   .order-summary-block{
       margin:5px;
-      width: 600px;
-      height: 250px;
+      width: 100%;
+      height: 225px;
       border: solid lightgrey 1px;
       padding:15px;
       color:black;
@@ -487,10 +489,11 @@
       justify-content: center;
       flex-direction: row;
       border-radius: 3px;
+      background-color: white;
+      
   }
   
   .order-summary-photo{
-      
       width:250px;
       height:200px;
       display:flex;
@@ -499,14 +502,19 @@
       
   }
   
+  .cart_icon{
+      width:35px;
+      height: 30px
+  }
+  
   #summary-photo{
       width: 120px;
       height:120px;
   }
   
   .order-summary-info{
-      
-      width:350px;
+      background-color: white;
+      width:250px;
       height:200px;
       text-align: left;
   }
@@ -552,6 +560,21 @@
       box-shadow: 0px 1px 3px grey;
       padding: 5px 10px;
   }
+  
+  #login-alert{
+      width:500px;
+      height:300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+  }
+  
+  #login-alert a {
+      margin:5px;
+  }
+  
+  
   
   #displayUser{
       color: white;
@@ -643,8 +666,11 @@
             else {
                 echo '<li><a href="logoff.php">LOG OFF</a></li>';
             }
+            if($_SESSION["user"] =="test@gmail.com"){
+                echo '<li><a href="create_item.php">create item</a></li>';
+            }
         ?>
-        <li><a class =' navbar-right' href="add_order.php"><img src="ecommerce_images/cart.png"/></a></li>
+        <a class ='cart_icon' href="add_order.php"><img src="ecommerce_images/cart.png" style="width:40px"/></a>
       </ul>
     </div>
       <?php ?>

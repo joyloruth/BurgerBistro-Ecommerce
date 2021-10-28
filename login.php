@@ -1,5 +1,5 @@
 <?php include "header.php" ?>
-<?php include "UserDAOImpl.php" ?>
+<?php include "DAO/SQLConnection.php" ?>
 
 
     <center>
@@ -11,17 +11,27 @@
         </form>
 
         <br></br>
-        <a href="signup.php">Create an Account</a>
+        <a href="signup.php" class = "loginbutton">Create an Account</a>
     </center>
 
     <?php 
         if(isset($_POST["sub"]))
         {
-             $user = new UserDAOImpl();
-             $user->login();
+            $con = SQLConnection::getConn();
+            $st_check=$con->prepare("select * from users where email = ? and password = ?");
+            $st_check->bind_param("ss", $_POST['email'], $_POST['password']);
+            $st_check->execute();
+            $rs=$st_check->get_result();
             
-
-            
+            if($rs->num_rows === 0)
+            {
+                echo "<script>alert('Account not found.');</script>";
+            }
+            else
+            {
+                $_SESSION["user"]=$_POST["email"];
+                echo "<script>window.location = 'menu.php';</script>";
+            }
         }
     ?>
     

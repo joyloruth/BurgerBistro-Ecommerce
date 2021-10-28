@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include "SQLConnection.php" ?>
+<?php include "DAO/SQLConnection.php" ?>
 <div class =" cart">
            
             <?php

@@ -1,9 +1,12 @@
 <?php include "header.php" ?>
+<?php include "DAO/UserDAOImpl.php" ?>
+
 
     <?php
         echo "This session has ended and you have been successfully logged out.";
-        session_destroy();
-        session_unset();
+        
+        $user = new UserDAOImpl();
+        $user->logoff();
         
          echo "<h1>Return home <h2>"
         . "<script>window.location = 'index.php';</script>";

@@ -1,5 +1,7 @@
 <?php include "header.php" ?>
-<?php include "SQLConnection.php" ?>
+<?php include "DAO/SQLConnection.php" ?>
+
+
 <div id = "order-summary">
     <div id = "order-summary-sheet">
         
@@ -22,11 +24,10 @@
         $temp_order_stmt->execute();
         $temp_order_stmt_rs = $temp_order_stmt->get_result();
         
-        
         $delete_temp_order_stmt= $con->prepare("delete from temp_order where temp_order.email = ?");
-        
         $delete_temp_order_stmt->bind_param("s", $_SESSION["user"]);
         $delete_order= $delete_temp_order_stmt->execute();
+        
         $total = 0;
         echo '<div class = "order-summary-heading"'
            . '<h1> Order Summary</h1>'
@@ -50,22 +51,17 @@
                       <img src="ecommerce_images/'.$temp_order_item["photo"].'" id = "summary-photo"/>
                     </div>
                     <div class = "order-summary-info">
-                        <h3><b>'.$temp_order_item["name"]. '</b></h3>
-                        <h3><b>$'.$temp_order_item["price"] .'</b></h3>
-                        <p><b>Qty:  '.$temp_order_item["qty"] .'</b></p>
-                        <p><b>Category: '.$temp_order_item['category'].'</b></p>
-                        
-                        
-                        <a href="delete_item.php?id='.$temp_order_item["itemid"].'" >Remove item</a>
-                       
-                        
+                        <h3><b>'        .$temp_order_item["name"]. '</b></h3>
+                        <h3><b>$'       .$temp_order_item["price"] .'</b></h3>
+                        <p><b>Qty: '    .$temp_order_item["qty"] .'</b></p>
+                        <p><b>Category:'.$temp_order_item['category'].'</b></p>
                     </div>
                   </div> ';
 
         }
             
             echo '<a href="delete_item.php?id='. $delete_order.'" >Delete Order</a>';
-            echo '<a href="menu.php?" >Return to Menu</a>';
+            
         
     ?>
      
@@ -74,16 +70,17 @@
         <?php 
             echo  "Total: $ $total";
             
-            echo 
-            '<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                <input type ="hidden" name ="business"      value="sb-4hlop6885563@business.example.com"/>
+           ?> 
+            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                <input type ="hidden" name ="business"      value="sb-jzlgn8276608@business.example.com"/>
                 <input type ="hidden" name ="cmd"           value="_xclick"/>
-                <input type ="hidden" name ="item-name"     value="Food E-commere"/>
+                <input type ="hidden" name ="item-name"     value="Fetch Burger Bistro"/>
                 <input type ="hidden" name ="amount"        value="<?php echo $total ?>"/>
                 <input type ="hidden" name ="currency_code" value="USD"/>
                 <input type ="image"  name ="submit"        src=" ecommerce_images/paypalbutton.png" id = "paypalbutton"/>
-            </form>';
-        ?>
+            </form>
+            
+        
         
     </div>
 </div>

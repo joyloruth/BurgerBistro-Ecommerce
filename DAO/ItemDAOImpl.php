@@ -1,5 +1,6 @@
-<?php include "SQLConnection.php" ?>
-<?php include 'ItemDAO.php' ?>
+<?php include "DAO/SQLConnection.php" ?>
+<?php include 'DAO/ItemDAO.php' ?>
+
 
 <?php
 
@@ -41,7 +42,25 @@ class ItemDAOImpl implements ItemDAO {
         
     }
 
-
+    public function createItem() {
+        $con = SQLConnection::getConn();
+        $st_check=$con->prepare("insert into items(name,category, price, photo) values(?,?,?,?)");
+        $st_check->bind_param("ssss", $_POST["name"], $_POST["category"],$_POST["price"],$_POST["photo"]);
+        $st_check->execute();
+        echo "<script>window.location = 'menu.php'</script>";
+        
+    }
+    
+    public function viewAllCategories(){
+        $con = SQLConnection::getConn();
+        $stmt=$con->prepare("select distinct category from items ");
+        $stmt->execute();
+        $rs=$stmt->get_result();
+           while($item=$rs->fetch_assoc())
+             {
+                echo '<li><a href="?cat='.$item["category"].'">'.$item["category"].'</a></li>';
+             }
+    }
 }
 
 ?>

@@ -64,23 +64,64 @@
     transition: all 1s ease-in-out;
   }
   
-  @keyframes opacity
-  {
+  /*KEYFRAMES*/
+  @-webkit-keyframes opacity{
     from { opacity: 0%;}
       to { opacity: 100%;}
   }
-  
+  @-moz-keyframes opacity{
+    from { opacity: 0%;}
+      to { opacity: 100%;}
+  }
+  @keyframes opacity{
+    from { opacity: 0%;}
+      to { opacity: 100%;}
+  }
+ 
+ 
+  @-webkit-keyframes end
+  {
+    from { visibility: hidden;}
+      to { visibility: visible;}
+  }
+  @-moz-keyframes end
+  {
+    from { visibility: hidden;}
+      to { visibility: visible;}
+  }
   @keyframes end
   {
     from { visibility: hidden;}
       to { visibility: visible;}
   }
   
-  @keyframes moveUp{
+  
+  @-webkit-keyframes moveUp{
+      0%{ transform: translateY(50px);}
+    100%{ transform: translateY(-50x);}
+  }
+  @-moz-keyframes moveUp{
+      0%{ transform: translateY(50px);}
+    100%{ transform: translateY(-50x);}
+  }
+    @keyframes moveUp{
       0%{ transform: translateY(50px);}
     100%{ transform: translateY(-50x);}
   }
   
+  
+  @-webkit-keyframes grow{
+    from  { height: 0px;
+           width: 0px;}
+      to { height: 65px;
+            width: 65px;}
+  }
+  @-moz-keyframes grow{
+    from  { height: 0px;
+           width: 0px;}
+      to { height: 65px;
+            width: 65px;}
+  }
   @keyframes grow{
     from  { height: 0px;
            width: 0px;}
@@ -88,12 +129,35 @@
             width: 65px;}
   }
 
-  @keyframes font-small{
+  @-webkit-keyframes font-small{
+    from  { font-size: 20px;}
+      to  { font-size: 0px;}
+  }
+   @-moz-keyframes font-small{
+    from  { font-size: 20px;}
+      to  { font-size: 0px;}
+  }
+   @keyframes font-small{
     from  { font-size: 20px;}
       to  { font-size: 0px;}
   }
   
   
+  @-webkit-keyframes make_invisible
+  {
+    from { height: auto;
+            width: auto; }
+      to { height:   0%;
+            width:   0%; }
+  }
+
+  @-moz-keyframes make_visible
+  {
+    from { height: auto;
+            width: auto; }
+      to { height:   0%;
+            width:   0%; }
+  }
   @keyframes make_invisible
   {
     from { height: auto;
@@ -101,37 +165,45 @@
       to { height:   0%;
             width:   0%; }
   }
-
-  @keyframes make_visible
-  {
-    from { height: auto;
-            width: auto; }
-      to { height:   0%;
-            width:   0%; }
-  }
   
 
 
   
-  @keyframes fadeOutBackground{
+@-webkit-keyframes fadeOutBackground{
     100%
-    {
-      background-color: rgba(153, 205, 50, 0);
-    }
+    { background-color: rgba(153, 205, 50, 0);}
     0%
-    {
-      background-color: yellowgreen;
-    }
-  }
+    {background-color: yellowgreen;}
+}
+@-moz-keyframes fadeOutBackground{
+    100%
+    { background-color: rgba(153, 205, 50, 0);}
+    0%
+    {background-color: yellowgreen;}
+}
+@keyframes fadeOutBackground{
+    100%
+    { background-color: rgba(153, 205, 50, 0);}
+    0%
+    {background-color: yellowgreen;}
+}
   
   
-  @keyframes displayNone
-  {
-    from { display: flex;
-             }
-      to { display: none;
-             }
-  }
+@-webkit-keyframes displayNone
+{
+    from { display: flex;}
+      to { display: none;}
+}
+@-moz-keyframes displayNone
+{
+    from { display: flex;}
+      to { display: none;}
+}
+@keyframes displayNone
+{
+    from { display: flex;}
+      to { display: none;}
+}
 
 
 

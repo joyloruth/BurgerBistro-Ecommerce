@@ -1,11 +1,11 @@
 <?php include "header.php" ?>
-<?php include "SQLConnection.php" ?>
+<?php include "DAO/SQLConnection.php" ?>
+
 
 
 <div id = "menu-layout">
     <div id = "side-menu">
         <?php 
-                   
                     $con = SQLConnection::getConn();
                     $st=$con->prepare("select distinct category from items ");
                     $st->execute();
@@ -72,23 +72,15 @@
                                         <a href="delete_item.php?id='.$row["itemid"].'" >Delete</a>
                                     </div>
                                   </div>';
-                            
                         }
-                        
+                       
                           echo "<div class = 'total'>TOTAL: $ $total".
-                                 
+                            
                                     '<form action="add_order.php" method="post">
                                     <input type="submit" value="Check Out" >
                                     </form>' .
-                                  "</div>";
-                       
-                       
-                       
-                        
+                                  "</div>";           
         ?>
-        
     </div>
-    
-  
 </div>
 <?php include "footer.php" ?>

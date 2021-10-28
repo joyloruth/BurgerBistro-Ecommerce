@@ -1,11 +1,6 @@
-<?php include "SQLConnection.php" ?>
-<?php include "UserDAO.php" ?>
+<?php include "DAO/SQLConnection.php" ?>
+<?php include "DAO/UserDAO.php" ?>
 <?php
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/PHPClass.php to edit this template
- */
 
 /**
  * Description of UserDAOImpl
@@ -21,20 +16,16 @@ class UserDAOImpl implements UserDAO{
         $st_check->execute();
         $rs=$st_check->get_result();
         
-            if($rs->num_rows === 0)
-            {
-                echo "<script>alert('Account not found.');</script>";
-            }
-            else
-            {
-                $_SESSION["user"]=$_POST["email"];
-                echo "<script>window.location = 'menu.php';</script>";
-            }
         
+    }
+    
+    public function logoff(){
+        session_destroy();
+        session_unset();
     }
 
     public function signup() {
-             if($_POST[password] === $_POST[confirm])
+        if($_POST[password] === $_POST[confirm])
         {
             $con = SQLConnection::getConn();
             $st_check=$con->prepare("select * from users where email = ?");
