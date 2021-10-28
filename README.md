@@ -5,6 +5,6 @@
 	<li>Designed REST API that creates, retrieves, updates and removes items, users and order to and from MYSQL database</li>
 	<li>Implemented PHP sessions to store visitor preferences as they login and navigate over multiple pages</li>
 	<li>Created full screen CSS page preloader that animates as the page is loading</li>
-<li>Integrated Google Maps API for location services and PayPal REST API for B2C customer payment transactions</li>
+<li>Integrated Google Maps API for location services and PayPal API for B2C customer payment transactions</li>
 </ul>
 
